@@ -1,0 +1,310 @@
+Trying:
+    display_room(rooms["Office"])
+Expecting:
+    <BLANKLINE>
+    THE GENERAL OFFICE
+    <BLANKLINE>
+    You are standing next to the cashier's till at
+    30-36 Newport Road. The cashier looks at you with hope
+    in their eyes. If you go west you can return to the
+    Queen's Buildings.
+    <BLANKLINE>
+ok
+Trying:
+    exit_leads_to(rooms["Reception"]["exits"], "south")
+Expecting:
+    "MJ and Simon's room"
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 88, in game.exit_leads_to
+Failed example:
+    exit_leads_to(rooms["Reception"]["exits"], "south")
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\c1667859\AppData\Local\Programs\Python\Python35-32\lib\doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "<doctest game.exit_leads_to[0]>", line 1, in <module>
+        exit_leads_to(rooms["Reception"]["exits"], "south")
+      File "C:\Users\c1667859\Desktop\game1_template\game.py", line 95, in exit_leads_to
+        return rooms(["exit"], ["direction"])
+    TypeError: 'dict' object is not callable
+Trying:
+    exit_leads_to(rooms["Reception"]["exits"], "east")
+Expecting:
+    "your personal tutor's office"
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 90, in game.exit_leads_to
+Failed example:
+    exit_leads_to(rooms["Reception"]["exits"], "east")
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\c1667859\AppData\Local\Programs\Python\Python35-32\lib\doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "<doctest game.exit_leads_to[1]>", line 1, in <module>
+        exit_leads_to(rooms["Reception"]["exits"], "east")
+      File "C:\Users\c1667859\Desktop\game1_template\game.py", line 95, in exit_leads_to
+        return rooms(["exit"], ["direction"])
+    TypeError: 'dict' object is not callable
+Trying:
+    exit_leads_to(rooms["Tutor"]["exits"], "west")
+Expecting:
+    'Reception'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 92, in game.exit_leads_to
+Failed example:
+    exit_leads_to(rooms["Tutor"]["exits"], "west")
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\c1667859\AppData\Local\Programs\Python\Python35-32\lib\doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "<doctest game.exit_leads_to[2]>", line 1, in <module>
+        exit_leads_to(rooms["Tutor"]["exits"], "west")
+      File "C:\Users\c1667859\Desktop\game1_template\game.py", line 95, in exit_leads_to
+        return rooms(["exit"], ["direction"])
+    TypeError: 'dict' object is not callable
+Trying:
+    is_valid_exit(rooms["Reception"]["exits"], "south")
+Expecting:
+    True
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 148, in game.is_valid_exit
+Failed example:
+    is_valid_exit(rooms["Reception"]["exits"], "south")
+Expected:
+    True
+Got nothing
+Trying:
+    is_valid_exit(rooms["Reception"]["exits"], "up")
+Expecting:
+    False
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 150, in game.is_valid_exit
+Failed example:
+    is_valid_exit(rooms["Reception"]["exits"], "up")
+Expected:
+    False
+Got nothing
+Trying:
+    is_valid_exit(rooms["Parking"]["exits"], "west")
+Expecting:
+    False
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 152, in game.is_valid_exit
+Failed example:
+    is_valid_exit(rooms["Parking"]["exits"], "west")
+Expected:
+    False
+Got nothing
+Trying:
+    is_valid_exit(rooms["Parking"]["exits"], "east")
+Expecting:
+    True
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 154, in game.is_valid_exit
+Failed example:
+    is_valid_exit(rooms["Parking"]["exits"], "east")
+Expected:
+    True
+Got nothing
+Trying:
+    move(rooms["Reception"]["exits"], "south") == rooms["Admins"]
+Expecting:
+    True
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 192, in game.move
+Failed example:
+    move(rooms["Reception"]["exits"], "south") == rooms["Admins"]
+Expected:
+    True
+Got:
+    False
+Trying:
+    move(rooms["Reception"]["exits"], "east") == rooms["Tutor"]
+Expecting:
+    True
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 194, in game.move
+Failed example:
+    move(rooms["Reception"]["exits"], "east") == rooms["Tutor"]
+Expected:
+    True
+Got:
+    False
+Trying:
+    move(rooms["Reception"]["exits"], "west") == rooms["Office"]
+Expecting:
+    False
+ok
+Trying:
+    normalise_input("  Go south! ")
+Expecting:
+    'go south'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 47, in game.normalise_input
+Failed example:
+    normalise_input("  Go south! ")
+Expected:
+    'go south'
+Got nothing
+Trying:
+    normalise_input("!!! tAkE,. LAmp!?! ")
+Expecting:
+    'take lamp'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 49, in game.normalise_input
+Failed example:
+    normalise_input("!!! tAkE,. LAmp!?! ")
+Expected:
+    'take lamp'
+Got nothing
+Trying:
+    normalise_input("HELP!!!!!!!")
+Expecting:
+    'help'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 51, in game.normalise_input
+Failed example:
+    normalise_input("HELP!!!!!!!")
+Expected:
+    'help'
+Got nothing
+Trying:
+    print_menu_line("east", "you personal tutor's office")
+Expecting:
+    Go EAST to you personal tutor's office.
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 108, in game.print_menu_line
+Failed example:
+    print_menu_line("east", "you personal tutor's office")
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\c1667859\AppData\Local\Programs\Python\Python35-32\lib\doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "<doctest game.print_menu_line[0]>", line 1, in <module>
+        print_menu_line("east", "you personal tutor's office")
+      File "C:\Users\c1667859\Desktop\game1_template\game.py", line 113, in print_menu_line
+        print("Go", direction.uppercase(), "To", leads_to)
+    AttributeError: 'str' object has no attribute 'uppercase'
+Trying:
+    print_menu_line("south", "MJ and Simon's room")
+Expecting:
+    Go SOUTH to MJ and Simon's room.
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 110, in game.print_menu_line
+Failed example:
+    print_menu_line("south", "MJ and Simon's room")
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\c1667859\AppData\Local\Programs\Python\Python35-32\lib\doctest.py", line 1321, in __run
+        compileflags, 1), test.globs)
+      File "<doctest game.print_menu_line[1]>", line 1, in <module>
+        print_menu_line("south", "MJ and Simon's room")
+      File "C:\Users\c1667859\Desktop\game1_template\game.py", line 113, in print_menu_line
+        print("Go", direction.uppercase(), "To", leads_to)
+    AttributeError: 'str' object has no attribute 'uppercase'
+Trying:
+    remove_punct("Hello, World!")
+Expecting:
+    'Hello World'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 13, in game.remove_punct
+Failed example:
+    remove_punct("Hello, World!")
+Expected:
+    'Hello World'
+Got nothing
+Trying:
+    remove_punct("-- ...Hey! -- Yes?!...")
+Expecting:
+    ' Hey  Yes'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 15, in game.remove_punct
+Failed example:
+    remove_punct("-- ...Hey! -- Yes?!...")
+Expected:
+    ' Hey  Yes'
+Got nothing
+Trying:
+    remove_punct(",go!So.?uTh")
+Expecting:
+    'goSouTh'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 17, in game.remove_punct
+Failed example:
+    remove_punct(",go!So.?uTh")
+Expected:
+    'goSouTh'
+Got nothing
+Trying:
+    remove_spaces("  Hello!  ")
+Expecting:
+    'Hello!'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 28, in game.remove_spaces
+Failed example:
+    remove_spaces("  Hello!  ")
+Expected:
+    'Hello!'
+Got nothing
+Trying:
+    remove_spaces("  Python  is  easy!   ")
+Expecting:
+    'Python  is  easy!'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 30, in game.remove_spaces
+Failed example:
+    remove_spaces("  Python  is  easy!   ")
+Expected:
+    'Python  is  easy!'
+Got nothing
+Trying:
+    remove_spaces("Python is easy!")
+Expecting:
+    'Python is easy!'
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 32, in game.remove_spaces
+Failed example:
+    remove_spaces("Python is easy!")
+Expected:
+    'Python is easy!'
+Got nothing
+Trying:
+    remove_spaces("")
+Expecting:
+    ''
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 34, in game.remove_spaces
+Failed example:
+    remove_spaces("")
+Expected:
+    ''
+Got nothing
+Trying:
+    remove_spaces("   ")
+Expecting:
+    ''
+**********************************************************************
+File "C:\Users\c1667859\Desktop\game1_template\game.py", line 36, in game.remove_spaces
+Failed example:
+    remove_spaces("   ")
+Expected:
+    ''
+Got nothing
+4 items had no tests:
+    game
+    game.main
+    game.menu
+    game.print_menu
+1 items passed all tests:
+   1 tests in game.display_room
+**********************************************************************
+7 items had failures:
+   3 of   3 in game.exit_leads_to
+   4 of   4 in game.is_valid_exit
+   2 of   3 in game.move
+   3 of   3 in game.normalise_input
+   2 of   2 in game.print_menu_line
+   3 of   3 in game.remove_punct
+   5 of   5 in game.remove_spaces
+24 tests in 12 items.
+2 passed and 22 failed.
+***Test Failed*** 22 failures.
